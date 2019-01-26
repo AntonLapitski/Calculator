@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
+
 namespace App\src;
 
 /**
@@ -8,5 +9,10 @@ namespace App\src;
  */
 interface CalculatorInterface
 {
-    public function calculate(): float;
+    /**
+     * @param $a float|int|null
+     * @param $b float|int|null
+     * @return float
+     */
+    public function calculate($a, $b): float;
 }

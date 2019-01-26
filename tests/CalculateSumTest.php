@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
+
 namespace App\tests;
 
 use App\src\CalculateSum;
@@ -10,23 +11,45 @@ use PHPUnit\Framework\TestCase;
  * @package App\tests
  * @mixin TestCase
  */
-
 class CalculateSumTest extends TestCase
 {
     /**
-     * @param mixed $a
-     * @param mixed $b
-     * @param mixed $c
+     * @var CalculateSum
+     */
+    private $calculator;
+
+    /**
+     * CalculateSum initialization.
+     *
+     * @return void
+     */
+    protected function setUp()
+    {
+        $this->calculator = new CalculateSum();
+    }
+
+    /**
+     * Test adding numbers.
+     *
+     * @param $a int|float|null
+     * @param $b int|float|null
+     * @param $c float
      * @dataProvider provider
      * @return void
      */
     public function testAdd($a, $b, $c): void
     {
-        $calc = new CalculateSum($a, $b);
-        $this->assertSame($c, $calc->calculate());
+        $this->assertSame($c, $this->calculator->calculate($a, $b));
+        $this->assertTrue(is_float($c));
+        if (!is_null($a) && !is_null($b)) {
+            $this->assertGreaterThan($a, abs($c));
+            $this->assertGreaterThan($b, abs($c));
+        }
     }
 
     /**
+     * Provider filled with numbers.
+     *
      * @return array
      */
     public function provider(): array

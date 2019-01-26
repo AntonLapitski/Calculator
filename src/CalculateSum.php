@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
+
 namespace App\src;
 
 /**
@@ -9,31 +10,21 @@ namespace App\src;
 class CalculateSum implements CalculatorInterface
 {
     /**
-     * @var float
-     */
-    private $a;
-    /**
-     * @var float
-     */
-    private $b;
-
-    /**
      * CalculateSum constructor.
-     * @param mixed $a
-     * @param mixed $b
      */
-    public function __construct($a, $b)
+    public function __construct()
     {
-        $this->a = (float)$a;
-        $this->b = (float)$b;
+
     }
 
     /**
+     * @param float|int|null $a
+     * @param float|int|null $b
      * @return float
      */
-    public function calculate(): float
+    public function calculate($a, $b): float
     {
-        $value = $this->a + $this->b;
+        $value = (float)$a + (float)$b;
 
         return $value;
     }
