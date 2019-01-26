@@ -1,3 +1,4 @@
+https://travis-ci.org/AntonLapitski/Calculator.svg?branch=master
 # Calculator
 Simple application which implements work of a calculator with some unit tests. Application includes psr-4 autoloading and testing framework is phpunit.
     
