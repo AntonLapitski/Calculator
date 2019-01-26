@@ -18,8 +18,8 @@ class CalculateSum implements CalculatorInterface
     }
 
     /**
-     * @param float|int|null $a
-     * @param float|int|null $b
+     * @param float|null|int $a
+     * @param float|null|int $b
      * @return float
      */
     public function calculate($a, $b): float

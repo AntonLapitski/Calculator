@@ -31,9 +31,9 @@ class CalculateSumTest extends TestCase
     /**
      * Test adding numbers.
      *
-     * @param $a int|float|null
-     * @param $b int|float|null
-     * @param $c float
+     * @param float|null|int $a
+     * @param float|null|int $b
+     * @param float $c
      * @dataProvider provider
      * @return void
      */

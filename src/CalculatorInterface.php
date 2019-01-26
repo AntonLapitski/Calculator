@@ -10,8 +10,8 @@ namespace App\src;
 interface CalculatorInterface
 {
     /**
-     * @param $a float|int|null
-     * @param $b float|int|null
+     * @param float|null|int $a
+     * @param float|null|int $b
      * @return float
      */
     public function calculate($a, $b): float;
